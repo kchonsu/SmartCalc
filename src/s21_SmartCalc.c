@@ -1,10 +1,10 @@
 #include "s21_SmartCalc.h"
 
-int main() {
-    char *input = "48*6+1*(-6)+sin(sqrt(ln(34)))";
-    printf("%lf\n", s21_parser(input, 0.05));
-    return 0;
-}
+//int main() {
+//    char *input = "48*6+1*(-6)+sin(sqrt(ln(34)))";
+//    printf("%lf\n", s21_parser(input, 0.05));
+//    return 0;
+//}
 
 int input_data(char *input) {
     int res = 0;
@@ -194,12 +194,12 @@ int check_operators(char *input) {
 
 double calculating_op(double a, double b, char operatorr) {
     double res = 0;
-    if (operatorr == '+') res = a+b;
-    if (operatorr == '-') res = a-b;
-    if (operatorr == '*') res = a*b;
-    if (operatorr == '/') res = a/b;
-    if (operatorr == 'm') res = fmod(a,b);
-    if (operatorr == '^') res = pow(a,b);
+    if (operatorr == '+') res = b+a;
+    if (operatorr == '-') res = b-a;
+    if (operatorr == '*') res = b*a;
+    if (operatorr == '/') res = b/a;
+    if (operatorr == 'm') res = fmod(b, a);
+    if (operatorr == '^') res = pow(b, a);
     return res;
 }
 
